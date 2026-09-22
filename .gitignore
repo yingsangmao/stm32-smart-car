@@ -1,0 +1,27 @@
+# Keil MDK 编译产物（自动生成，不需版本管理）
+Objects/
+Listings/
+DebugConfig/
+RTE/
+*.dep
+*.crf
+*.o
+*.axf
+*.hex
+*.bin
+*.map
+*.lst
+*.lnp
+*.htm
+*.sct
+*.build_log.htm
+
+# Keil 个人窗口/界面设置（含机器名，因人而异）
+*.uvguix.*
+*.uvguix
+
+# 备份文件
+*.bak
+*.bak_*
+*.orig
+*~
