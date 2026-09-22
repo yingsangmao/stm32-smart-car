@@ -17,7 +17,7 @@ uint16_t HCSR04_Distance=0;  //超声波测到的距离
 
 /**** main 主函数代码 ***
 
-*** 作者：yingsangmao ***
+*** 原作者：chenjiayou  整理与补充：yingsangmao ***
 
 
 

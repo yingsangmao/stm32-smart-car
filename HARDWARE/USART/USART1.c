@@ -10,7 +10,7 @@ u8 RxData=0x00;
 
 *** 接口：PA9->TX   PA10->RX ***
 
-*** 作者：yingsangmao ***
+*** 原作者：chenjiayou  整理与补充：yingsangmao ***
 
 
 

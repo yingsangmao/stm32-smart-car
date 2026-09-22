@@ -67,5 +67,12 @@
 1. 使用 **Keil MDK 5** 打开 `Project.uvprojx`（编译器 ARM Compiler 5）。
 2. 编译后通过 ST-Link / USB 转 TTL 烧录到 STM32F103C8T6。
 
+## 来源与致谢
+
+本工程的驱动框架与主体代码，基于 B 站 UP 主「陈加油嗯」的 STM32 智能小车入门教程（原作者：chenjiayou）学习整理而来。
+
+本人（yingsangmao）在此基础上完成了：通读并整理源码与注释、补充「十字/岔路口直行」的循迹逻辑、以及若干复制粘贴错误的修正。感谢原作者的教程。
+
 ---
-作者：yingsangmao
+整理：yingsangmao
+

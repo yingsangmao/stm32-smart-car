@@ -14,7 +14,7 @@
 					 STM32F      L298N电机驱动
 					PA6--ENA       PA7--ENB   
 
-*** 作者：yingsangmao ***
+*** 原作者：chenjiayou  整理与补充：yingsangmao ***
 
 
 

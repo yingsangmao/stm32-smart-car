@@ -8,7 +8,7 @@
 
 *** 接口：PA0->舵机1 ***
 
-*** 作者：yingsangmao ***
+*** 原作者：chenjiayou  整理与补充：yingsangmao ***
 
 
 

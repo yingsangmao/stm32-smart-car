@@ -10,7 +10,7 @@
 
 *** 接口：PA0->舵机1   PA1->舵机2   PA2->舵机3   PA3->舵机4 ***
 
-*** 作者：yingsangmao ***
+*** 原作者：chenjiayou  整理与补充：yingsangmao ***
 
 
 
