@@ -19,3 +19,23 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---------------------------------------------------------------------------
+来源说明 / Provenance
+
+本仓库（stm32-smart-car）的驱动框架与主体代码，基于 B 站 UP 主「陈加油嗯」的
+STM32 智能小车入门教程（原作者：chenjiayou）学习整理而来，该部分原始版权
+归原作者所有。
+
+本仓库由 yingsangmao 新增与整理的部分 —— 包括 pc_controller/ 电脑端手势遥控、
+STM32 端的手势遥控模式与心跳超时保护、以及各 README 文档 —— 按上述 MIT
+条款授权。
+
+另外，本仓库包含以下第三方代码，版权归各自所有者，不在本项目的授权范围内：
+
+  - Library/、Start/           STMicroelectronics STM32F10x 标准外设库与 CMSIS
+  - User/stm32f10x_conf.h      STMicroelectronics
+  - User/stm32f10x_it.c/.h     STMicroelectronics
+
+各部分代码的具体来源见 README.md 的「来源与致谢」。
+---------------------------------------------------------------------------

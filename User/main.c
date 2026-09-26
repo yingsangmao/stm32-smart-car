@@ -1,4 +1,13 @@
-﻿#include "stm32f10x.h"                  // Device header
+﻿/**
+ * @file    main.c
+ * @brief   智能小车主程序：初始化各外设，主循环分发串口指令、刷新 OLED 界面
+ *
+ * @note    属于 stm32-smart-car 项目（STM32F103C8T6 蓝牙循迹避障智能小车）。
+ *          原作者：chenjiayou      整理与补充：yingsangmao
+ *          各部分代码的具体来源与授权见仓库根目录 README.md / LICENSE。
+ */
+
+#include "stm32f10x.h"                  // Device header
 #include "Delay.h"
 #include "LED.h"
 #include "TIM3_PWM.h"
@@ -10,18 +19,9 @@
 #include "mycontrol.h"
 #include "Trace.h"
 
-
 extern u8 RxData;
 uint16_t HCSR04_Distance=0;  //超声波测到的距离
 
-
-/**** main 主函数代码 ***
-
-*** 原作者：chenjiayou  整理与补充：yingsangmao ***
-
-
-
-*/
 int main(void)
 {
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
@@ -124,8 +124,6 @@ int main(void)
 		}
 
 		OLED_Refresh();             //更新显存到OLED(即刷新刚写入的数据,刷新屏幕)
-
-
 
 	}
 }

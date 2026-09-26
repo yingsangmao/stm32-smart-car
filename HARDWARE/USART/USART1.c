@@ -1,21 +1,18 @@
-﻿#include "USART1.h"
+﻿/**
+ * @file    USART1.c
+ * @brief   USART1 串口驱动：与 JDY-31 蓝牙模块通信（PA9->TX，PA10->RX），接收中断存入 RxData
+ *
+ * @note    属于 stm32-smart-car 项目（STM32F103C8T6 蓝牙循迹避障智能小车）。
+ *          原作者：chenjiayou      整理与补充：yingsangmao
+ *          各部分代码的具体来源与授权见仓库根目录 README.md / LICENSE。
+ */
+
+#include "USART1.h"
 #include "sys.h"
 #include "mycontrol.h"
 
 u8 RxData=0x00;
 
-/*
-*** USART1  配置串口1与JDY-31通信 ***
-
-*** 波特率：115200，8位数据位，1位停止位，无奇偶校验位 ***
-
-*** 接口：PA9->TX   PA10->RX ***
-
-*** 原作者：chenjiayou  整理与补充：yingsangmao ***
-
-
-
-*/
 void USART1_Init(uint32_t bound)
 {
 	GPIO_InitTypeDef GPIO_Initstructure;

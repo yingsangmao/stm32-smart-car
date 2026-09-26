@@ -1,7 +1,15 @@
-﻿#ifndef __mycontrol_H
+﻿/**
+ * @file    mycontrol.h
+ * @brief   避障、循迹与手势遥控模式的接口声明
+ *
+ * @note    属于 stm32-smart-car 项目（STM32F103C8T6 蓝牙循迹避障智能小车）。
+ *          原作者：chenjiayou      整理与补充：yingsangmao
+ *          各部分代码的具体来源与授权见仓库根目录 README.md / LICENSE。
+ */
+
+#ifndef __mycontrol_H
 #define __mycontrol_H
 #include "sys.h"
-
 
 void Avoidance(void);
 void Trace_task(void);

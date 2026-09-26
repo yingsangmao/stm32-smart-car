@@ -1,4 +1,13 @@
-﻿#ifndef __SYS_H
+﻿/**
+ * @file    sys.h
+ * @brief   底层支持：位带操作宏与基础类型定义（u8/u16/u32）
+ *
+ * @note    属于 stm32-smart-car 项目（STM32F103C8T6 蓝牙循迹避障智能小车）。
+ *          原作者：chenjiayou      整理与补充：yingsangmao
+ *          各部分代码的具体来源与授权见仓库根目录 README.md / LICENSE。
+ */
+
+#ifndef __SYS_H
 #define __SYS_H	
 #include "stm32f10x.h" 
 
@@ -53,10 +62,6 @@
 #define PGout(n)   BIT_ADDR(GPIOG_ODR_Addr,n)  //输出 
 #define PGin(n)    BIT_ADDR(GPIOG_IDR_Addr,n)  //输入
 
-
-
 void NVIC_Configuration(void);
-
-
 
 #endif

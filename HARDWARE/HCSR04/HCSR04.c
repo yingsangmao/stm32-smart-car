@@ -1,4 +1,13 @@
-﻿#include "stm32f10x.h"    // STM32F10x 设备头文件
+﻿/**
+ * @file    HCSR04.c
+ * @brief   HC-SR04 超声波测距（Trig=PA4，Echo=PA5，TIM4 计 Echo 高电平时间）
+ *
+ * @note    属于 stm32-smart-car 项目（STM32F103C8T6 蓝牙循迹避障智能小车）。
+ *          原作者：chenjiayou      整理与补充：yingsangmao
+ *          各部分代码的具体来源与授权见仓库根目录 README.md / LICENSE。
+ */
+
+#include "stm32f10x.h"    // STM32F10x 设备头文件
 #include "HCSR04.h"       // HC-SR04 模块驱动头文件
 #include "delay.h"        // 微秒、毫秒级延时头文件
 
@@ -120,5 +129,4 @@ uint16_t HCSR04_GetValue(void)
     // 往返时间，实际距离 = (time_sec * 34000) / 2
     return ((Time * 0.0001f) * 34000) / 2;
 }
-
 

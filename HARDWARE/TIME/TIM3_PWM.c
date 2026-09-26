@@ -1,24 +1,17 @@
-﻿#include "TIM3_PWM.h"
+﻿/**
+ * @file    TIM3_PWM.c
+ * @brief   TIM3 通道 1/2 输出 5kHz PWM，用于电机调速（PA6->ENA，PA7->ENB）
+ *
+ * @note    属于 stm32-smart-car 项目（STM32F103C8T6 蓝牙循迹避障智能小车）。
+ *          原作者：chenjiayou      整理与补充：yingsangmao
+ *          各部分代码的具体来源与授权见仓库根目录 README.md / LICENSE。
+ */
+
+#include "TIM3_PWM.h"
 #include "MOTOR.h"
 
 
-/**** TIM3 配置定时器通道1、2输出PWM方波 ***
 
-*** 功能：实现电机调速 ***
-
-*** PWM频率：5KHz ***
-
-*** 修改占空比函数：TIM_SetComparex(TIMx,xxx); ***
-
-*** 接口：
-					 STM32F      L298N电机驱动
-					PA6--ENA       PA7--ENB   
-
-*** 原作者：chenjiayou  整理与补充：yingsangmao ***
-
-
-
-*/
 void TIM3_PWM_Init(u16 arr,u16 psc)
 {  
 	GPIO_InitTypeDef GPIO_InitStructure;
