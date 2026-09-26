@@ -1,0 +1,25 @@
+# STM32 手势遥控 —— 电脑端依赖
+#
+# 下面是本项目实际安装并跑通的版本，不是照抄的推荐值：
+#   Python 3.12.14（conda 环境 car-gesture）
+#   模型   gesture_recognizer.task  float16/1, 7.99 MB
+#          sha256 97952348cf6a6a4915c2ea1496b4b37ebabc50cbbf80571435643c455f2b0482
+#
+# 安装：
+#   conda create -n car-gesture python=3.12 -y
+#   conda activate car-gesture
+#   pip install -r requirements.txt
+#
+# 装完用 python check_env.py 自检。
+
+mediapipe==1.0.1
+pyserial==3.5
+numpy==2.2.5
+Pillow==11.2.1
+
+# 注意：这里必须用 opencv-contrib-python，不要改成 opencv-python。
+# mediapipe 依赖 opencv-contrib-python；如果两个都装，它们会同时提供
+# cv2 包并互相覆盖，导致运行时出现莫名其妙的错误。
+# 如果你已经误装了 opencv-python：
+#   pip uninstall -y opencv-python && pip install opencv-contrib-python==5.0.0.93
+opencv-contrib-python==5.0.0.93

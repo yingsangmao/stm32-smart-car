@@ -1,5 +1,6 @@
 ﻿#include "USART1.h"
 #include "sys.h"
+#include "mycontrol.h"
 
 u8 RxData=0x00;
 
@@ -63,6 +64,7 @@ void USART1_IRQHandler(void)
 	{
 			//USART_ClearFlag(USART1, USART_FLAG_RXNE);
 			RxData = USART_ReceiveData(USART1);  //接收到的数据存到 RxData
+			Gesture_OnRxByte(RxData);            //通知手势遥控模块刷新心跳(未进入该模式时无任何影响)
 
 //    USART_SendData(USART1, RxData);
 //    while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET) //等待数据发完

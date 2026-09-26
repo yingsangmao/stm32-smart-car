@@ -1,0 +1,19 @@
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 虚拟环境（本项目用 conda 环境 car-gesture，这里是防止有人另建 venv）
+.venv/
+venv/
+
+# 模型文件：8MB 二进制，可以用 get_model.py + 固定 URL 随时重新下载，
+# 所以默认不纳入版本管理。想提交的话删掉下面这行即可。
+# 下载后请核对 sha256：
+#   97952348cf6a6a4915c2ea1496b4b37ebabc50cbbf80571435643c455f2b0482
+models/*.task
+models/*.part
+
+# 调参时录的置信度数据（可随时用 --log-scores 重新生成）
+scores.csv
+scores*.csv
