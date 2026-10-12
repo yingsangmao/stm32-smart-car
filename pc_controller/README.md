@@ -346,34 +346,3 @@ STM32 端超过 **500ms** 未收到有效控制帧则强制停车。两道保护
 `--hold-ms` 保持默认 200ms 即可：实测握拳最长连续 11.4 秒、
 张开手掌 11.1 秒，远大于判定时间。
 
-### 待实机验证
-
-| 项目 | 说明 |
-| --- | --- |
-| 手势 → 转向的闭环效果 | 识别与参数已验证，但完整的"握拳 → 小车左转"闭环需在实车上确认 |
-| 电机转向极性 | `0x03` / `0x04` 与实际转向的对应关系以实物接线为准 |
-| 500ms 超时停车的计时精度 | 机制已实现并有代码路径确认，尚未实机计时 |
-| 手机遥控 / 循迹 / 避障回归 | 代码未改动这些分支，但未在实机复测 |
-
----
-
-## 10. 已知限制
-
-- **只支持单手、两种手势。** 多只手按"有歧义"处理，直接停车。
-- **不做手势扩展。** 添加新手势需要同时改 `GESTURE_TO_INTENT` 与
-  STM32 端的指令映射。
-- **转向指令只有左右转与停车**，没有前进/后退 —— 本版定位是方向控制。
-- **性能数据来自 CPU 推理**（7.3 ms/帧）。真实摄像头 + 真实手势的端到端
-  帧率还受摄像头自身帧率与画面刷新限制。
-- **`--min-score` 与 `--hold-ms` 强依赖使用环境**，换摄像头/光照/距离后
-  应重新实测。
-
----
-
-## 11. 参考
-
-- [MediaPipe Gesture Recognizer](https://ai.google.dev/edge/mediapipe/solutions/vision/gesture_recognizer)
-  —— 模型与 `mediapipe.tasks` API
-- 手势类别定义（canned gestures）：`Closed_Fist`、`Open_Palm`、
-  `Pointing_Up`、`Thumb_Down`、`Thumb_Up`、`Victory`、`ILoveYou`
-- 其他问题排查见 [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
